@@ -1,0 +1,34 @@
+name: Check
+
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    branches-ignore:
+      - main
+
+jobs:
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '21.7.1'
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli
+      - name: Lint Markdown Files
+        run: markdownlint '**/*.md' --ignore node_modules
+
+  check-links:
+    runs-on: ubuntu-latest
+    needs: markdown-lint
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install markdown-link-check
+        run: npm install -g markdown-link-check
+      - name: Check links in Markdown files
+        run: |
+          find . -name \*.md ! -path "./node_modules/*" -exec markdown-link-check {} \;

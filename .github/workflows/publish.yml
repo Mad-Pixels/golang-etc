@@ -1,0 +1,37 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21.7.1'
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install awscli -y
+      - name: Configure AWS Credentials
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set default.region ${{ secrets.AWS_REGION }}
+      - name: Run publish script
+        if: github.actor != 'github-actions[bot]'
+        run: |
+          chmod +x ./.github/publish.sh
+          ./.github/publish.sh
+        env:
+          TG_CHAT: ${{ secrets.CONTENT_TG_CHAT }}
+          TG_TOKEN: ${{ secrets.CONTENT_TG_TOKEN }}
+          AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
