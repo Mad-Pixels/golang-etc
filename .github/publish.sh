@@ -63,7 +63,7 @@ POSTIFY_VERSION="0.0.1"
 POSTIFY_NAME="postify"
 POSTIFY_URL="https://github.com/Mad-Pixels/go-postify/releases/download/v${POSTIFY_VERSION}/${POSTIFY_NAME}-${OS}-${ARCH}"
 
-STATIC_NAME="golang-tutorials-frontend"
+STATIC_NAME="golang-etc-frontend"
 STATIC_SOURCE_GIT_URL="https://github.com/Mad-Pixels/${STATIC_NAME}.git"
 
 GITHUB_BOT_USER="github-actions[bot]"
