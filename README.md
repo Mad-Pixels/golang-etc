@@ -35,10 +35,10 @@ snippets, or articles you'd like to share, we'd love to hear from you.
 
 If you're interested in contributing, please follow these steps:
 
-1. **Prepare Your Article**: Write an article that aligns with our content areas —
-   GoLang code snippets, system libraries, or new features.
-2. **Propose a Pull Request**: Fork our repository, add your article, and submit a
-   pull request.
+1. **Prepare Your Article**: Write an article that aligns with our content
+   areas - GoLang code snippets, system libraries, or new features.
+2. **Propose a Pull Request**: Fork our repository, add your article,
+   and submit a pull request.
 3. **Review Process**: Once submitted, your article will start a review process.
 4. **Publication**: Upon approval, your article will be merged into the main
    repository. It will then become part of our distribution through the Telegram
