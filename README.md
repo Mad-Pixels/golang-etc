@@ -49,8 +49,4 @@ If you're interested in contributing, please follow these steps:
 - If you're eager to contribute but unsure where to start, take a look at our
   [todo.md](https://github.com/Mad-Pixels/golang-etc-content/blob/main/TODO.md) file.
 
-## 💙 Happy Hacking
-
-We're excited to have you join our community of GoLang enthusiasts. Together, we
-can create a comprehensive resource that helps developers navigate and excel in
-the world of GoLang. Thank you for supporting our project, and happy hacking!
+### 💙 Happy Hacking
