@@ -1,0 +1,23 @@
+# These are ideas for future posts
+
+- Implementing a Ring Buffer in Go
+- Using Go's sync.Pool for Efficient Memory Management
+- Securely Storing Passwords in Go
+- Optimizing Go Code with pprof
+- WebSocket Communication in Go
+- Using Go 1.18 Generics for Custom Data Structures
+- Rate Limiting Requests in Go with golang.org/x/time/rate
+- Elegant Error Handling
+- Creating a Simple File Server in Go
+- Efficient String Concatenation with strings.Builder
+- Custom Sort Functions with sort.Slice
+- Using Channels for Data Synchronization
+- Parsing Dates and Times in Go
+- Reversing a Slice Without Additional Memory
+- Detecting Cycles in a Linked List
+- Implementing a Concurrent Map with sync.Mutex
+- Using Reflection to Inspect Variable Types
+- Creating a Custom Iterator for a Collection
+- Debouncing Function Calls
+- Using Atomic Operations for Counter
+- Embedding Structs for Composition
