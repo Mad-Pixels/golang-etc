@@ -71,7 +71,7 @@ GITHUB_BOT_MAIL="github-actions[bot]@users.noreply.github.com"
 GITHUB_COMMIT_MSG="[🤖]: update content meta-info"
 GITHUB_COMMIT_BRANCH="main"
 
-CONTENT_ALL=$(cd "${ROOT_DIR}" && ls -d */)
+CONTENT_ALL=$(cd "${ROOT_DIR}" && ls -d */ || echo "")
 CONTENT_NEW=$(git diff --name-only HEAD^ HEAD --diff-filter=A | grep -v '^\.' | xargs -n 1 dirname | sort -u | grep -v '/\.' | sort -u)
 CONTENT_CHANGED=$(git diff --name-only HEAD^ HEAD --diff-filter=M | grep -v '^\.' | xargs -n 1 dirname | sort -u | grep -v '/\.' | sort -u)
 
@@ -79,7 +79,6 @@ HR=$(printf '%*s\n' "80" '' | tr ' ' '=')
 YELLOW='\033[1;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
-BOLD='\033[1m'
 NC='\033[0m'
 
 ############################################################
@@ -121,7 +120,7 @@ if cd "${ROOT_DIR}" && git clone "${STATIC_SOURCE_GIT_URL}"; then
       --with-router "${ROOT_DIR}/${STATIC_NAME}/src/routes/content/router.json" \
       --with-tmpl "${ROOT_DIR}/${STATIC_NAME}/assets/templates/content.svelte" \
       --to "${ROOT_DIR}/${STATIC_NAME}/src/routes/content/${dir}" \
-      --with-assets "${ROOT_DIR}/go-doc-frontend/assets/content" \
+      --with-assets "${ROOT_DIR}/${STATIC_NAME}/assets/content" \
       --from "${ROOT_DIR}/${dir}" \
       --with-name +page.svelte;
     then
