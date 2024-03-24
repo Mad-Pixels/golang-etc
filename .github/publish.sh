@@ -36,10 +36,6 @@ if [ "$ARCH" = "x86_64" ]; then
     ARCH="amd64"
 fi
 
-CONTENT_TG_TOKEN=${TG_TOKEN}
-CONTENT_TG_CHAT=${TG_CHAT}
-STATIC_BUCKET=${AWS_BUCKET}
-
 if [ "$ARCH" != "amd64" ] && [ "$ARCH" != "arm64" ]; then
     echo "Error: Unsupported architecture ${ARCH}. Only amd64 and arm64 are supported."
     exit 1
@@ -50,9 +46,14 @@ if [ "$OS" != "Linux" ] && [ "$OS" != "Darwin" ]; then
     exit 1
 fi
 
-validate_env "${CONTENT_TG_TOKEN}"
-validate_env "${CONTENT_TG_CHAT}"
-validate_env "${STATIC_BUCKET}"
+CONTENT_TG_TOKEN=${TG_TOKEN}
+validate_env "CONTENT_TG_TOKEN"
+
+CONTENT_TG_CHAT=${TG_CHAT}
+validate_env "CONTENT_TG_CHAT"
+
+STATIC_BUCKET=${AWS_BUCKET}
+validate_env "STATIC_BUCKET"
 
 ############################################################
 # Define Global Variables                                  #
@@ -72,8 +73,8 @@ GITHUB_COMMIT_MSG="[🤖]: update content meta-info"
 GITHUB_COMMIT_BRANCH="main"
 
 CONTENT_ALL=$(cd "${ROOT_DIR}" && ls -d */ || echo "")
-CONTENT_NEW=$(git diff --name-only HEAD^ HEAD --diff-filter=A | grep -v '^\.' | xargs -n 1 dirname | sort -u | grep -v '/\.' | sort -u)
-CONTENT_CHANGED=$(git diff --name-only HEAD^ HEAD --diff-filter=M | grep -v '^\.' | xargs -n 1 dirname | sort -u | grep -v '/\.' | sort -u)
+CONTENT_NEW=$(git diff --name-only HEAD^ HEAD --diff-filter=A | grep -v '^\.' | xargs -n 1 dirname | sort -u | grep -v '/\.' | grep -v '^.$' | sort -u)
+CONTENT_CHANGED=$(git diff --name-only HEAD^ HEAD --diff-filter=M | grep -v '^\.' | xargs -n 1 dirname | sort -u | grep -v '/\.' | sort -u | grep -v '^.$')
 
 HR=$(printf '%*s\n' "80" '' | tr ' ' '=')
 YELLOW='\033[1;33m'
