@@ -47,7 +47,7 @@ If you're interested in contributing, please follow these steps:
 ### Finding Ideas for Your Post
 
 - If you're eager to contribute but unsure where to start, take a look at our
-  [todo.md](https://github.com/Mad-Pixels/golang-etc/blob/main/TODO.md) file.
+  [todo.md](https://github.com/Mad-Pixels/golang-etc-content/blob/main/TODO.md) file.
 
 ## 💙 Happy Hacking
 
