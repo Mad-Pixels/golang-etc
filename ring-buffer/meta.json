@@ -1,8 +1,10 @@
 {
-  "static": {
-    "title": "simple ring buffer implementation"
+  "telegram": {
+    "message_id": 9,
+    "date": 1711365914
   },
-  "tags": {
-    "author": "mr-chelyshkin"
+  "static": {
+    "title": "simple ring buffer implementation",
+    "url": "content/ring-buffer"
   }
 }
