@@ -1,0 +1,8 @@
+{
+  "static": {
+    "title": "simple ring buffer implementation"
+  },
+  "tags": {
+    "author": "mr-chelyshkin"
+  }
+}
