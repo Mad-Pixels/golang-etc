@@ -1,6 +1,5 @@
 # These are ideas for future posts
 
-- Implementing a Ring Buffer in Go
 - Using Go's sync.Pool for Efficient Memory Management
 - Securely Storing Passwords in Go
 - Optimizing Go Code with pprof
