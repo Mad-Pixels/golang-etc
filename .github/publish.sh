@@ -60,7 +60,7 @@ validate_env "STATIC_BUCKET"
 ############################################################
 ROOT_DIR=$(git rev-parse --show-toplevel)
 
-POSTIFY_VERSION="0.0.1"
+POSTIFY_VERSION="0.0.2"
 POSTIFY_NAME="postify"
 POSTIFY_URL="https://github.com/Mad-Pixels/go-postify/releases/download/v${POSTIFY_VERSION}/${POSTIFY_NAME}-${OS}-${ARCH}"
 
@@ -121,7 +121,6 @@ if cd "${ROOT_DIR}" && git clone "${STATIC_SOURCE_GIT_URL}"; then
       --with-router "${ROOT_DIR}/${STATIC_NAME}/src/routes/content/router.json" \
       --with-tmpl "${ROOT_DIR}/${STATIC_NAME}/assets/templates/content.svelte" \
       --to "${ROOT_DIR}/${STATIC_NAME}/src/routes/content/${dir}" \
-      --with-assets "${ROOT_DIR}/${STATIC_NAME}/assets/content" \
       --from "${ROOT_DIR}/${dir}" \
       --with-name +page.svelte;
     then
