@@ -5,6 +5,7 @@
   },
   "static": {
     "title": "simple ring buffer implementation",
-    "url": "content/ring-buffer"
-  }
+    "path": "/content/ring-buffer/"
+  },
+  "tags": null
 }
