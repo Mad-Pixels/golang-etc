@@ -6,9 +6,11 @@ The template includes compilation optimizations to reduce the binary size.
 - **LD:** For Linker optimizations
 - **GC:** For GC optimizations
 
-Additionally, it embraces a multi-architecture approach ensuring compatibility across different hardware platforms.
+Additionally, it embraces a multi-architecture approach ensuring compatibility 
+across different hardware platforms.
 
-During the build process, the template utilizes the **cache** directive, optimizing the workflow.
+During the build process, the template utilizes the **cache** directive, 
+optimizing the workflow.
 
 ```Dockerfile
 ARG ALPINE_VERSION=3.18
