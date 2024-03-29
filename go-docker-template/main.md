@@ -73,5 +73,5 @@ FROM alpine:${ALPINE_VERSION} AS arm64
 ARG NAME
 ENV APP=${NAME}
 COPY --from=builder-arm64 /out/${APP} /${APP}
-ENTRYPOINT ["sh", "-c", "/$APP"]
+ENTRYPOINT ["sh", "-c", "/$APP"] 
 ```

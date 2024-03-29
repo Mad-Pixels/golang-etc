@@ -1,4 +1,8 @@
 {
+  "telegram": {
+    "message_id": 10,
+    "date": 1711720504
+  },
   "static": {
     "title": "dockerfile template for app"
   },
