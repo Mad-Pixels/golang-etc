@@ -14,11 +14,6 @@ Ring buffers are optimally selected for:
    - Example: Latest system metrics for monitoring.
 
 ```go
-package main
-
-import "fmt"
-
-// RingBuffer object
 type RingBuffer struct {
     data     []interface{} // Slice to store buffer data
     capacity int           // Buffer capacity
@@ -27,7 +22,6 @@ type RingBuffer struct {
     size     int           // Current buffer size
 }
 
-// NewRingBuffer creates a new ring buffer instance
 func NewRingBuffer(capacity int) *RingBuffer {
     return &RingBuffer{
         data:     make([]interface{}, capacity),
@@ -62,37 +56,4 @@ func (rb *RingBuffer) Pop() interface{} {
 func (rb *RingBuffer) Size() int {
     return rb.size
 }
-
-func main() {
-    rb := NewRingBuffer(5) // Create a buffer with 5 items capacity
-
-    // Populate the buffer
-    rb.Push(1)
-    rb.Push(2)
-    rb.Push(3)
-    rb.Push(4)
-    rb.Push(5)
-    fmt.Println("Buffer filled with elements 1 to 5")
-
-    // Demonstrate overwriting
-    rb.Push(6)
-    fmt.Println("Added element 6, overwriting the oldest (1)")
-    fmt.Printf("Oldest now (should be 2): %v\n", rb.Pop())
-
-    // Continue overwriting
-    rb.Push(7)
-    fmt.Println("Added element 7, overwriting continues")
-    fmt.Printf("Oldest now (should be 3): %v\n", rb.Pop())
-
-    // Display current buffer size
-    fmt.Printf("Buffer size after pops: %d\n", rb.Size())
-
-    // Pop remaining elements
-    fmt.Println("Popping remaining elements:")
-    fmt.Println(rb.Pop()) // Should print 4
-    fmt.Println(rb.Pop()) // Should print 5
-    fmt.Println(rb.Pop()) // Should print 6
-
-    // Final buffer size
-    fmt.Printf("Final buffer size: %d\n", rb.Size())
-}
+```
