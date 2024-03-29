@@ -4,7 +4,8 @@
     "date": 1711365914
   },
   "static": {
-    "title": "simple ring buffer implementation"
+    "title": "simple ring buffer implementation",
+    "path": "/content/ring-buffer/"
   },
   "tags": {
     "author": "mr-chelyshkin"
