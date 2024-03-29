@@ -1,4 +1,4 @@
-# Dockerfile Template for Go-App
+# Dockerfile Template for Go app
 
 The template includes compilation optimizations to reduce the binary size.
 

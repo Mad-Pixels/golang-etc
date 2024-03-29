@@ -4,7 +4,7 @@
     "date": 1711720504
   },
   "static": {
-    "title": "dockerfile template for app"
+    "title": "dockerfile template for go app"
   },
   "tags": {
     "author": "mr-chelyshkin"
