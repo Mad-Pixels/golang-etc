@@ -7,5 +7,7 @@
     "title": "simple ring buffer implementation",
     "path": "/content/ring-buffer/"
   },
-  "tags": null
+  "tags": {
+    "author": "mr-chelyshkin"
+  }
 }
