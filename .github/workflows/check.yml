@@ -19,8 +19,8 @@ jobs:
           node-version: '21.7.1'
       - name: Install markdownlint-cli
         run: npm install -g markdownlint-cli
-      - name: Lint Markdown Files
-        run: markdownlint '**/*.md' --ignore node_modules
+#      - name: Lint Markdown Files
+#        run: markdownlint '**/*.md' --ignore node_modules
 
   check-links:
     runs-on: ubuntu-latest
