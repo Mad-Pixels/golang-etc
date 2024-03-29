@@ -7,7 +7,7 @@ The template includes compilation optimizations to reduce the binary size.
 - **GC:** For GC optimizations
 
 Additionally, it embraces a multi-architecture approach ensuring compatibility 
-across different hardware platforms.
+across different hardware platforms. 
 
 During the build process, the template utilizes the **cache** directive, 
 optimizing the workflow.
