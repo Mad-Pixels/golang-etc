@@ -1,15 +1,14 @@
-# Dockerfile Template for Go-App.
+# Dockerfile Template for Go-App
 
-The template include compilation optimizations to reduce the binary size.
- - **ASM:** For Assembly optimizations
- - **LD:** For Linker optimizations
- - **GC:** For GC optimizations
+The template includes compilation optimizations to reduce the binary size.
 
-Additionally, it embraces a multi-architecture approach ensuring 
-compatibility across different hardware platforms.
+- **ASM:** For Assembly optimizations
+- **LD:** For Linker optimizations
+- **GC:** For GC optimizations
 
-During the build process, the template utilizes the **cache** directive, 
-optimizing the workflow.
+Additionally, it embraces a multi-architecture approach ensuring compatibility across different hardware platforms.
+
+During the build process, the template utilizes the **cache** directive, optimizing the workflow.
 
 ```Dockerfile
 ARG ALPINE_VERSION=3.18
@@ -36,11 +35,11 @@ COPY ./ .
 ENV GOARCH=amd64
 RUN  --mount=type=cache,target="${GOCACHE}" \
      go build \
-	  -asmflags="${ASM_FLAGS}" \
-	  -ldflags="${LD_FLAGS}"   \
-	  -gcflags="${GC_FLAGS}"   \
-	  -o /out/${NAME}          \
-	  ./cmd
+     -asmflags="${ASM_FLAGS}" \
+     -ldflags="${LD_FLAGS}"   \
+     -gcflags="${GC_FLAGS}"   \
+     -o /out/${NAME}          \
+     ./cmd
 
 FROM alpine:${ALPINE_VERSION} AS amd64
 ARG NAME
@@ -62,11 +61,11 @@ COPY ./ .
 ENV GOARCH=arm64
 RUN  --mount=type=cache,target="${GOCACHE}" \
      go build \
-	  -asmflags="${ASM_FLAGS}" \
-	  -ldflags="${LD_FLAGS}"   \
-	  -gcflags="${GC_FLAGS}"   \
-	  -o /out/${NAME}          \
-	  ./cmd
+     -asmflags="${ASM_FLAGS}" \
+     -ldflags="${LD_FLAGS}"   \
+     -gcflags="${GC_FLAGS}"   \
+     -o /out/${NAME}          \
+     ./cmd
 
 FROM alpine:${ALPINE_VERSION} AS arm64
 ARG NAME
