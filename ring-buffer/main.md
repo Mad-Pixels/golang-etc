@@ -34,7 +34,7 @@ func NewRingBuffer(capacity int) *RingBuffer {
 	}
 }
 
-// Push an item to the end of the buffer
+// Push an item to the buffer
 func (rb *RingBuffer) Push(item interface{}) {
 	if rb.size == rb.capacity {
 		rb.head = (rb.head + 1) % rb.capacity
@@ -45,7 +45,7 @@ func (rb *RingBuffer) Push(item interface{}) {
 	rb.tail = (rb.tail + 1) % rb.capacity
 }
 
-// Pop and returns the oldest item
+// Pop and returns the oldest
 func (rb *RingBuffer) Pop() interface{} {
 	if rb.size == 0 {
 		return nil
