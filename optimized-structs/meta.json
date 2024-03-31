@@ -1,6 +1,11 @@
 {
+  "telegram": {
+    "message_id": 11,
+    "date": 1711886817
+  },
   "static": {
-    "title": "optimized structs"
+    "title": "optimized structs",
+    "path": "/content/optimized-structs/"
   },
   "tags": {
     "author": "mr-chelyshkin"
