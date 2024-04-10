@@ -1,6 +1,11 @@
 {
+  "telegram": {
+    "message_id": 13,
+    "date": 1712730294
+  },
   "static": {
-    "title": "manage build by tags"
+    "title": "manage build by tags",
+    "path": "/content/manage-build-by-tags/"
   },
   "tags": {
     "author": "mr-chelyshkin"
