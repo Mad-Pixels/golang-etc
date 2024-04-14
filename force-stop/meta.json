@@ -1,6 +1,11 @@
 {
+  "telegram": {
+    "message_id": 14,
+    "date": 1713092634
+  },
   "static": {
-    "title": "force stop with Must func"
+    "title": "force stop with Must func",
+    "path": "/content/force-stop/"
   },
   "tags": {
     "author": "mr-chelyshkin"
