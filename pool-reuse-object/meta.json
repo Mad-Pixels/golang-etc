@@ -1,6 +1,11 @@
 {
+  "telegram": {
+    "message_id": 15,
+    "date": 1713422982
+  },
   "static": {
-    "title": "sync.Pool: optimizing object reuse"
+    "title": "sync.Pool: optimizing object reuse",
+    "path": "/content/pool-reuse-object/"
   },
   "tags": {
     "author": "mr-chelyshkin"
