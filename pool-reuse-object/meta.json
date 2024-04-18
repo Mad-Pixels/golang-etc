@@ -1,0 +1,8 @@
+{
+  "static": {
+    "title": "sync.Pool: optimizing object reuse"
+  },
+  "tags": {
+    "author": "mr-chelyshkin"
+  }
+}
