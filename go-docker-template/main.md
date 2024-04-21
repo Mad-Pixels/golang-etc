@@ -48,7 +48,7 @@ RUN --mount=type=cache,target="${GOCACHE}" \
 FROM alpine:${ALPINE_VERSION} AS amd64
 ARG NAME
 ENV APP=${NAME}
-COPY --from=builder-arm64 /out/${APP} /${APP}
+COPY --from=builder-amd64 /out/${APP} /${APP}
 ENTRYPOINT ["sh", "-c", "/$APP"]
 
 # arm64
