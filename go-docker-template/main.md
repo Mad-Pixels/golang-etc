@@ -35,13 +35,15 @@ WORKDIR /go/src/${NAME}
 COPY ./ .
 
 ENV GOARCH=amd64
-RUN  --mount=type=cache,target="${GOCACHE}" \
-     go build \
-     -asmflags="${ASM_FLAGS}" \
-     -ldflags="${LD_FLAGS}"   \
-     -gcflags="${GC_FLAGS}"   \
-     -o /out/${NAME}          \
-     ./cmd
+RUN go mod vendor
+RUN --mount=type=cache,target="${GOCACHE}" \
+      go build \
+        -mod=vendor \
+        -asmflags="${ASM_FLAGS}" \
+        -ldflags="${LD_FLAGS}"   \
+        -gcflags="${GC_FLAGS}"   \
+        -o /out/${NAME}          \
+      ./cmd
 
 FROM alpine:${ALPINE_VERSION} AS amd64
 ARG NAME
@@ -61,13 +63,15 @@ WORKDIR /go/src/${NAME}
 COPY ./ .
 
 ENV GOARCH=arm64
-RUN  --mount=type=cache,target="${GOCACHE}" \
-     go build \
-     -asmflags="${ASM_FLAGS}" \
-     -ldflags="${LD_FLAGS}"   \
-     -gcflags="${GC_FLAGS}"   \
-     -o /out/${NAME}          \
-     ./cmd
+RUN go mod vendor
+RUN --mount=type=cache,target="${GOCACHE}" \
+      go build \
+        -mod=vendor \
+        -asmflags="${ASM_FLAGS}" \
+        -ldflags="${LD_FLAGS}"   \
+        -gcflags="${GC_FLAGS}"   \
+        -o /out/${NAME}          \
+      ./cmd
 
 FROM alpine:${ALPINE_VERSION} AS arm64
 ARG NAME
